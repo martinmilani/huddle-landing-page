@@ -31,7 +31,8 @@ body {
 
 @media only screen and (min-width: 975px) {
   .container {
-    padding: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
   }
 }
 
