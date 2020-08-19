@@ -1,0 +1,444 @@
+/* Layout */
+$Mobile: 375px;
+$Desktop: 1440px;
+
+/** Colors **/
+
+/* Primary */
+$Pink: hsl(322, 100%, 66%);
+
+/* Neutral */
+
+$VeryPaleCyan: hsl(193, 100%, 96%);
+$VeryDarkCyan: hsl(192, 100%, 9%);
+$GrayishBlue: hsl(208, 11%, 55%);
+
+/** Typography **/
+
+/* Body Copy */
+
+$BodySize: 18px;
+
+/* Headings */
+
+$Poppins: "Poppins", sans-serif;
+$FontRegular: 600;
+
+/* Body, Call-to-actions */
+$OpenSans: "Open Sans", sans-serif;
+$FontNormal: 400;
+$FontBold: 700;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 975px) {
+    @content;
+  }
+}
+
+@mixin customButton {
+  font-family: $Poppins;
+  border-radius: 40px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  box-shadow: 2px 2px 20px -8px $GrayishBlue;
+}
+
+body {
+  font-size: $BodySize;
+  font-weight: $FontRegular;
+  font-family: $Poppins;
+}
+
+.container {
+  min-width: 340px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.section-header {
+  background-image: url(/images/bg-hero-mobile.svg);
+  background-color: $VeryPaleCyan;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include desktop {
+    background-image: url(/images/bg-hero-desktop.svg);
+  }
+
+  header {
+    padding: 2em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-logo {
+      width: 135px;
+      height: auto;
+
+      @include desktop {
+        width: 200px;
+        height: auto;
+      }
+    }
+
+    .header-button {
+      font-size: 0.8rem;
+      background: white;
+      padding: 0.5em 2.25em;
+      @include customButton;
+      @include desktop {
+        font-size: 0.9rem;
+        padding: 1em 4.75em;
+      }
+    }
+  }
+
+  .hero {
+    padding-top: 3em;
+    padding-bottom: 2em;
+    padding-left: 2.25em;
+    padding-right: 2.25em;
+    @include desktop {
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 3em;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .hero-text-contaier {
+      @include desktop {
+        padding-top: 3em;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero-title {
+        text-align: center;
+        line-height: 2.75em;
+        font-size: 1rem;
+        margin-top: 2em;
+        margin-bottom: 1.5em;
+        @include desktop {
+          text-align: left;
+          font-size: 1.25rem;
+          margin-bottom: 0.75em;
+        }
+      }
+
+      .hero-subtitle {
+        font-family: $OpenSans;
+        font-weight: $FontNormal;
+        text-align: center;
+        font-size: 1.3rem;
+        line-height: 1.5em;
+        opacity: 75%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+
+        @include desktop {
+          text-align: left;
+          font-size: 1.2rem;
+          line-height: 1.25em;
+          margin-top: 0.5em;
+          margin-bottom: 0.75em;
+        }
+      }
+
+      .hero-button-container {
+        text-align: center;
+        margin-top: 2.75em;
+        margin-bottom: 4em;
+
+        .hero-button {
+          @include customButton;
+          font-family: $OpenSans;
+          font-weight: $FontBold;
+          background: $Pink;
+          color: white;
+          padding: 1.3em 5em;
+          font-size: 0.9rem;
+        }
+
+        @include desktop {
+          text-align: left;
+          margin: 1em 0;
+        }
+      }
+    }
+
+    .hero-img-container {
+      margin: 4.5em auto 0 auto;
+      width: 100%;
+      @include desktop {
+        margin: 0;
+        width: 55%;
+      }
+    }
+  }
+}
+
+.section-content {
+  background: rgba(147, 154, 160, 0.01);
+  padding-top: 1.5em;
+  padding-bottom: 5em;
+
+  .card {
+    background: white;
+    width: 90%;
+    margin: 2.5em auto 2em auto;
+    border-radius: 20px;
+    box-shadow: 2px 2px 24px -12px $GrayishBlue;
+
+    @include desktop {
+      display: flex;
+      width: 95%;
+    }
+
+    .card-article {
+      padding-right: 3.5em;
+      padding-left: 3.5em;
+      @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        padding-right: 4em;
+        padding-left: 6em;
+      }
+
+      .card-title {
+        text-align: center;
+        margin-top: 0.25em;
+
+        @include desktop {
+          text-align: left;
+        }
+      }
+
+      .card-text {
+        margin: 0 auto;
+        padding-top: 1.25em;
+        padding-bottom: 2.5em;
+        text-align: center;
+        font-family: $OpenSans;
+        font-weight: $FontNormal;
+        opacity: 45%;
+        line-height: 1.5em;
+
+        @include desktop {
+          text-align: left;
+          padding-top: 1em;
+        }
+      }
+    }
+  }
+
+  .card-img {
+    padding: 3em;
+    margin: 0 auto;
+  }
+
+  #card-left {
+    @include desktop {
+      .card-img {
+        order: 2;
+      }
+      .card-article {
+        order: 1;
+      }
+    }
+  }
+
+  .card-container {
+    margin-top: 8em;
+    margin-bottom: -210px;
+  }
+
+  .card-start {
+    width: 95%;
+    padding: 2.5em 1.5em 1em 1.5em;
+    position: relative;
+    z-index: 99;
+    flex-direction: column;
+    text-align: center;
+
+    @include desktop {
+      width: 60%;
+    }
+
+    .card-title {
+      h3 {
+        font-size: 1.6rem;
+        @include desktop {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .card-button-container {
+      margin-top: 0.3em;
+      margin-bottom: 1em;
+      text-align: center;
+      padding: 1.5em;
+
+      .card-button {
+        @include customButton;
+        font-family: $OpenSans;
+        font-weight: $FontBold;
+        background: $Pink;
+        color: white;
+        padding: 1.35em 5.25em;
+        font-size: 0.85rem;
+        @include desktop {
+          padding: 1.35em 5.25em;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding-top: 170px;
+  background: $VeryDarkCyan;
+  padding-left: 1em;
+  padding-right: 1em;
+
+  @include desktop {
+    .grid {
+      display: grid;
+      gap: 2em;
+      grid-template-columns: 1.5fr 1fr 1fr;
+    }
+
+    .column-1 {
+      @include desktop {
+        margin-right: 20%;
+      }
+    }
+
+    .column-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 3em 3em;
+      justify-items: start;
+    }
+  }
+
+  .footer-logo {
+    width: 210px;
+    margin-bottom: 1.25em;
+    @include desktop {
+      width: 300px;
+    }
+  }
+
+  .footer-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.25em;
+    @include desktop {
+      margin-right: 1em;
+    }
+
+    .footer-icon {
+      padding-top: 0.3em;
+      width: 16px;
+      align-self: flex-start;
+    }
+
+    .footer-text {
+      width: 90%;
+      color: white;
+      opacity: 95%;
+      font-family: $OpenSans;
+      font-weight: $FontNormal;
+      font-size: 1rem;
+      line-height: 1.32em;
+      @include desktop {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .footer-social-list,
+  .footer-link-list {
+    list-style: none;
+    margin-top: 3.5em;
+    @include desktop {
+      margin: 0;
+    }
+
+    li + li {
+      margin: 1.25em auto;
+      @include desktop {
+        margin: 0;
+      }
+    }
+
+    li {
+      a {
+        text-decoration: none;
+        font-family: $OpenSans;
+        font-weight: $FontNormal;
+        font-size: 1rem;
+        color: white;
+        @include desktop {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  .footer-social-list {
+    text-align: center;
+
+    li + li {
+      margin: auto 0 auto 0.5em;
+    }
+
+    li {
+      display: inline;
+
+      img {
+        width: 35px;
+      }
+    }
+  }
+
+  .copyright {
+    margin: 2em auto 0.25em auto;
+    color: white;
+    font-family: $OpenSans;
+    font-weight: $FontNormal;
+    font-size: 0.75rem;
+    text-align: center;
+    @include desktop {
+      text-align: right;
+    }
+  }
+
+  .attribution {
+    padding-bottom: 2em;
+    color: white;
+    opacity: 80%;
+    font-family: $OpenSans;
+    font-weight: $FontNormal;
+    @include desktop {
+      text-align: right;
+    }
+  }
+}
