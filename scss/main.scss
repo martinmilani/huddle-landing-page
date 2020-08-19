@@ -63,7 +63,7 @@ body {
 
 .container {
   min-width: 340px;
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -333,8 +333,36 @@ footer {
     .column-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 3em 3em;
+      grid-template-rows: 3em 3em 3em;
       justify-items: start;
+      grid-template-areas:
+        "aboutUs career "
+        "whatWeDo blog"
+        "faq contactUs";
+    }
+
+    #item-1 {
+      grid-area: aboutUs;
+    }
+
+    #item-2 {
+      grid-area: whatWeDo;
+    }
+
+    #item-3 {
+      grid-area: faq;
+    }
+
+    #item-4 {
+      grid-area: career;
+    }
+
+    #item-5 {
+      grid-area: blog;
+    }
+
+    #item-6 {
+      grid-area: contactUs;
     }
   }
 

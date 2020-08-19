@@ -25,7 +25,7 @@ body {
 
 .container {
   min-width: 340px;
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -387,9 +387,40 @@ footer {
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-    -ms-grid-rows: 3em 3em;
-        grid-template-rows: 3em 3em;
+    -ms-grid-rows: 3em 3em 3em;
+        grid-template-rows: 3em 3em 3em;
     justify-items: start;
+        grid-template-areas: "aboutUs career " "whatWeDo blog" "faq contactUs";
+  }
+  footer #item-1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: aboutUs;
+  }
+  footer #item-2 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: whatWeDo;
+  }
+  footer #item-3 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: faq;
+  }
+  footer #item-4 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: career;
+  }
+  footer #item-5 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: blog;
+  }
+  footer #item-6 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: contactUs;
   }
 }
 
