@@ -65,6 +65,9 @@ body {
   min-width: 340px;
   max-width: 1440px;
   margin: 0 auto;
+  @include desktop {
+    padding: 3em;
+  }
 }
 
 .section-header {
@@ -106,7 +109,7 @@ body {
   }
 
   .hero {
-    padding-top: 3em;
+    padding-top: 4em;
     padding-bottom: 2em;
     padding-left: 2.25em;
     padding-right: 2.25em;
@@ -251,7 +254,7 @@ body {
     margin: 0 auto;
   }
 
-  #card-left {
+  .card-left {
     @include desktop {
       .card-img {
         order: 2;

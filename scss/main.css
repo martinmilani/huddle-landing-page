@@ -29,6 +29,12 @@ body {
   margin: 0 auto;
 }
 
+@media only screen and (min-width: 975px) {
+  .container {
+    padding: 3em;
+  }
+}
+
 .section-header {
   background-image: url(/images/bg-hero-mobile.svg);
   background-color: #ebfbff;
@@ -89,7 +95,7 @@ body {
 }
 
 .section-header .hero {
-  padding-top: 3em;
+  padding-top: 4em;
   padding-bottom: 2em;
   padding-left: 2.25em;
   padding-right: 2.25em;
@@ -282,12 +288,12 @@ body {
 }
 
 @media only screen and (min-width: 975px) {
-  .section-content #card-left .card-img {
+  .section-content .card-left .card-img {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
   }
-  .section-content #card-left .card-article {
+  .section-content .card-left .card-article {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
